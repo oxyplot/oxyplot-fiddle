@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>OxyPlot Fiddle</title>
+    <meta charset="utf-8" />
+    <script>
+        function onLoaded() {
+            if (window.location.search) {
+                document.getElementById("source").value = decodeURIComponent(window.location.search.substring(1));
+            }
+
+            updateImage();
+        }
+        function updateImage() {
+            var src = encodeURIComponent(document.getElementById("source").value);
+            document.getElementById("image").src = '/api/plot?source=' + src;
+            window.history.pushState('','','?'+src);
+            return false;
+        }
+    </script>
+</head>
+<body onload="onLoaded()">
+<header>
+    <strong>OxyPlot Fiddle</strong>
+    <a href="/">reset</a>
+    <a href="http://oxyplot.org">oxyplot.org</a>
+</header>
+<textarea id="source" name="source" style="width: 900px; height: 200px" onkeyup="updateImage()">var model = new PlotModel { Title = "OxyPlot on Azure!" };
+model.Axes.Add(new LinearAxis { Position = AxisPosition.Left });
+model.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom });
+model.Series.Add(new FunctionSeries(Math.Sin, 0, 10, 1000));
+return model;
+</textarea>
+<img id="image"/>
+</body>
+</html>
