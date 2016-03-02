@@ -1,3 +1,3 @@
-A fiddle for OxyPlot
+A simple fiddle for OxyPlot
 
-[https://oxyplotfiddle.azurewebsites.net/]
+See https://oxyplotfiddle.azurewebsites.net/
