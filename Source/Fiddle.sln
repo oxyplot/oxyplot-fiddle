@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29403.142
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiddle", "Fiddle\Fiddle.csproj", "{0FD07C3A-7DCD-4F81-8C15-1D84F018491A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiddle2", "Fiddle2\Fiddle2.csproj", "{460450C7-6F97-401D-A269-5FA5FA43F8C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{0FD07C3A-7DCD-4F81-8C15-1D84F018491A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FD07C3A-7DCD-4F81-8C15-1D84F018491A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FD07C3A-7DCD-4F81-8C15-1D84F018491A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{460450C7-6F97-401D-A269-5FA5FA43F8C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{460450C7-6F97-401D-A269-5FA5FA43F8C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{460450C7-6F97-401D-A269-5FA5FA43F8C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{460450C7-6F97-401D-A269-5FA5FA43F8C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E5D1B44-50FB-472C-B168-F19965420296}
 	EndGlobalSection
 EndGlobal
