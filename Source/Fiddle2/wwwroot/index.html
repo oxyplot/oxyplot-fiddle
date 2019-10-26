@@ -32,6 +32,7 @@ return model;`;
         function updateImage(src) {
             // var src = encodeURIComponent(document.getElementById("editor").value);
             document.getElementById("image-png").src = '/plot?format=png&source=' + src;
+            document.getElementById("image-png-imagesharp").src = '/plot?format=png&renderer=ImageSharp&source=' + src;
             document.getElementById("image-svg").src = '/plot?format=svg&source=' + src;
             window.history.pushState('', '', '?' + src);
             return false;
@@ -76,9 +77,9 @@ return model;`;
                     OxyPlot 2.0 Fiddle
                 </p>
                 <!--<p class="panel-tabs">
-                    <a class="is-active">Custom</a>
-                    <a>ExampleLibrary</a>
-                </p>-->
+        <a class="is-active">Custom</a>
+        <a>ExampleLibrary</a>
+    </p>-->
                 <div class="panel-block">
                     <div class="field is-horizontal is-expanded">
                         <div class="field-label is-normal">
@@ -103,6 +104,20 @@ return model;`;
                             <div class="field">
                                 <div class="control">
                                     <img id="image-png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-block">
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label">PNG (OxyPlot.ImageSharp)</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <img id="image-png-imagesharp" />
                                 </div>
                             </div>
                         </div>

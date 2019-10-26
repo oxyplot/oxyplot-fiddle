@@ -12,7 +12,7 @@ namespace Fiddle2.Controllers
     [Route("[controller]")]
     public class PlotController : ControllerBase
     {
-        public async Task<IActionResult> Get(string format, string source, int width = 800, int height = 400)
+        public async Task<IActionResult> Get(string format, string source, int width = 800, int height = 400, string renderer = null)
         {
             var options = ScriptOptions.Default.WithReferences(typeof(OxyPlot.PlotModel).Assembly)
                 .WithImports("System", "OxyPlot", "OxyPlot.Axes", "OxyPlot.Series", "OxyPlot.Annotations");
@@ -34,6 +34,15 @@ namespace Fiddle2.Controllers
                     }
 
                 default:
+                    if (renderer == "ImageSharp")
+                    {
+                        var p = new OxyPlot.ImageSharp.PngExporter { Width = width, Height = height };
+                        var stream = new MemoryStream();
+                        p.Export(model, stream);
+                        stream.Position = 0;
+                        return this.File(stream, "image/png");
+                    }
+                    else
                     {
                         var p = new OxyPlot.Core.Drawing.PngExporter { Width = width, Height = height };
                         var stream = new MemoryStream();
