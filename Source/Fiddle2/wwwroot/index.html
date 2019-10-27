@@ -30,7 +30,7 @@ return model;`;
             updateImage(editor.getValue());
         }
         function updateImage(src) {
-            // var src = encodeURIComponent(document.getElementById("editor").value);
+            src = encodeURIComponent(src);
             document.getElementById("image-png").src = '/plot?format=png&source=' + src;
             document.getElementById("image-png-imagesharp").src = '/plot?format=png&renderer=ImageSharp&source=' + src;
             document.getElementById("image-svg").src = '/plot?format=svg&source=' + src;

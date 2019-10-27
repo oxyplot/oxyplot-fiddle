@@ -16,7 +16,7 @@ namespace Fiddle2.Controllers
         {
             var options = ScriptOptions.Default.WithReferences(typeof(OxyPlot.PlotModel).Assembly)
                 .WithImports("System", "OxyPlot", "OxyPlot.Axes", "OxyPlot.Series", "OxyPlot.Annotations");
-
+            source = source.Replace("\n", "\r\n");
             var result = await CSharpScript.EvaluateAsync(source, options);
 
             var model = result as OxyPlot.PlotModel;
