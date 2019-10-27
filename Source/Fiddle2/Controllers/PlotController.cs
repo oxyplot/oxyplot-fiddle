@@ -36,7 +36,7 @@ namespace Fiddle2.Controllers
                 default:
                     if (renderer == "ImageSharp")
                     {
-                        var p = new OxyPlot.ImageSharp.PngExporter { Width = width, Height = height };
+                        var p = new OxyPlot.ImageSharp.PngExporter { Width = width, Height = height, Background = OxyPlot.OxyColors.White };
                         var stream = new MemoryStream();
                         p.Export(model, stream);
                         stream.Position = 0;
@@ -44,7 +44,7 @@ namespace Fiddle2.Controllers
                     }
                     else
                     {
-                        var p = new OxyPlot.Core.Drawing.PngExporter { Width = width, Height = height };
+                        var p = new OxyPlot.Core.Drawing.PngExporter { Width = width, Height = height, Background = OxyPlot.OxyColors.White };
                         var stream = new MemoryStream();
                         p.Export(model, stream);
                         stream.Position = 0;
